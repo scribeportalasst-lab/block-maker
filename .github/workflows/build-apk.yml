@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -o block-maker.zip
+      - run: '[ -f config.js ] && cp config.js www/config.js || true'
       - uses: actions/setup-node@v4
         with:
           node-version: 20
